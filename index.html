@@ -804,8 +804,17 @@ button {
             <a download href="./template-source.zip" class="button icon-source"
         >Source Files</a
       >
-            <a download href="./linux-x11-main-a5e7f30.zip" class="button icon-x11"
+            <a download href="./linux-x11-main-ef9939c.zip" class="button icon-x11"
         >Linux/X11</a
+      >
+            <a download href="./windows-desktop-main-ef9939c.zip" class="button icon-win"
+        >Windows</a
+      >
+            <a download href="./macos-main-ef9939c.zip" class="button icon-osx"
+        >macOS</a
+      >
+            <a download href="./web-main-ef9939c.zip" class="button icon-web"
+        >Web</a
       >
           </div>
     
@@ -886,6 +895,27 @@ button {
 </li>
 <li>Head to <a href="https://localhost:8000">https://localhost:8000</a></li>
 </ul>
+<h2>To push the build to gh-pages</h2>
+<pre><code class="language-bash">#!/usr/bin/env bash
+
+export BUILD_DIR="exports/public"
+export RELEASE_BRANCH="gh-pages"
+
+# if first time: 
+# git checkout -b $RELEASE_BRANCH
+# otherwise:
+git fetch origin $RELEASE_BRANCH
+git add -f $BUILD_DIR
+tree=$(git write-tree --prefix=$BUILD_DIR)
+git reset -- $BUILD_DIR
+export identifier=$(git describe --dirty --always)
+# if first time:
+# git push -u origin $RELEASE_BRANCH
+export commit=$(git commit-tree -p refs/remotes/origin/$RELEASE_BRANCH -m "Deploy $identifier" $tree)
+git update-ref refs/heads/$RELEASE_BRANCH $commit
+git push origin refs/heads/$RELEASE_BRANCH
+git checkout main
+</code></pre>
 <h2>Useful Symbols for documenting keys &#x26; buttons</h2>
 <ul>
 <li><kbd>W</kbd></li>
@@ -938,8 +968,17 @@ button {
             <a download href="./template-source.zip" class="button icon-source"
         >Source Files</a
       >
-            <a download href="./linux-x11-main-a5e7f30.zip" class="button icon-x11"
+            <a download href="./linux-x11-main-ef9939c.zip" class="button icon-x11"
         >Linux/X11</a
+      >
+            <a download href="./windows-desktop-main-ef9939c.zip" class="button icon-win"
+        >Windows</a
+      >
+            <a download href="./macos-main-ef9939c.zip" class="button icon-osx"
+        >macOS</a
+      >
+            <a download href="./web-main-ef9939c.zip" class="button icon-web"
+        >Web</a
       >
           </div>
     
@@ -960,8 +999,8 @@ button {
           <a class="social-link icon-itch" href="https://gdquest.itch.io" title="GDquest on itch">
         <span class="sr-only">GDQuest on itch</span>
       </a>
-              <a class="version" href="https://github.com/gdquest-demos/template/commit/a5e7f30592c080a0a6ea4be56e2791c88900906b"
-        >version -main-a5e7f30 on Github</a
+              <a class="version" href="https://github.com/gdquest-demos/template/commit/ef9939c7b158bdc631f558d337e25246f28eb99a"
+        >version -main-ef9939c on Github</a
       > 
         </footer>
             <div id="github-ribbon">
