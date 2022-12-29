@@ -1,0 +1,89 @@
+{
+  "windowSize": [
+    1152,
+    648
+  ],
+  "data": {},
+  "date": {
+    "date": "2022-12-29",
+    "unix": 1672343644710
+  },
+  "git": {
+    "remote": "https://github.com/gdquest-demos/template",
+    "commit": "a5e7f30592c080a0a6ea4be56e2791c88900906b",
+    "commitShort": "a5e7f30",
+    "branch": "main",
+    "lastMessage": "first commit",
+    "version": "",
+    "submodules": []
+  },
+  "zipDir": "/home/xananax/gdquest-demos/template/exports/builds",
+  "doZipResults": true,
+  "useTempDirs": false,
+  "frontmatter": {
+    "firstHeader": "An example Demo repo",
+    "cover": "static/cover.webp",
+    "itchio": "https://gdquest-demos.itch.io/template",
+    "youtube": [
+      "https://youtu.be/RuueUYnwtKo"
+    ]
+  },
+  "readme": "<h1>An example Demo repo</h1>\n<p>This repo serves as an example of the requirements and standards necessary for creating a demo.</p>\n<h1>Checklist:</h1>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> There's a purposeful and specific icon for the demo</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> The <code>README.md</code> is well written:\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Buttons are in <code>&#x3C;kbd></code> tags, like this: <kbd>Z</kbd>. For controllers, you can use <a href=\"https://www.compart.com/en/unicode/block/U+2460\">AlphaNumeric Enclosed UTF8 chars</a> (see below for a list of useful ones)</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> The frontmatter is well set (see this file)</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> All images used are stored in a directory called <code>static</code></li>\n</ul>\n</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> The project has a well configured <code>export_presets.cfg</code> that you tested locally <em>or</em> does not have an <code>export_presets.cfg</code> at all (it will be generated)</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> the project has a <code>LICENSE</code> file</li>\n</ul>\n<h2>To upload to Itch</h2>\n<p>Either:</p>\n<ol>\n<li>specify the environment variables <code>ITCHIO_GAME</code>, <code>ITCHIO_USER</code> and <code>ITCHIO_API_KEY</code></li>\n<li>put those variables in a <code>.env</code> file (don't forget to exclude it from git)</li>\n<li>Only specify <code>ITCHIO_API_KEY</code>, but have an <code>itch</code> url in your frontmatter</li>\n</ol>\n<h2>To test locally:</h2>\n<ul>\n<li>Add <code>bin</code> and <code>exports</code> to your project's <code>.gitignore</code> (not necessary, but recommended)</li>\n<li>Run:\n<pre><code class=\"language-sh\">gwee build \\\n  -b beta9 . \\\n  -d \\\n  -p x11,win,osx,web \\\n  &#x26;&#x26; \\\n  notify-send \"build finished\" &#x26;&#x26; \\\n  npx local-web-server \\\n    --https \\\n    --cors.embedder-policy \"require-corp\" \\\n    --cors.opener-policy \"same-origin\" \\\n    --directory exports/public\n</code></pre>\n</li>\n<li>Head to <a href=\"https://localhost:8000\">https://localhost:8000</a></li>\n</ul>\n<h2>Useful Symbols for documenting keys &#x26; buttons</h2>\n<ul>\n<li><kbd>W</kbd></li>\n<li><kbd>A</kbd></li>\n<li><kbd>S</kbd></li>\n<li><kbd>D</kbd></li>\n<li><kbd>🕹 Stick</kbd></li>\n<li><kbd>XBox Ⓐ</kbd></li>\n<li><kbd>XBox Ⓑ</kbd></li>\n<li><kbd>XBox Ⓧ</kbd></li>\n<li><kbd>XBox Ⓨ</kbd></li>\n<li><kbd>☰ Menu</kbd></li>\n<li><kbd>⇧ Shift</kbd></li>\n<li><kbd>⌃ Control</kbd></li>\n<li><kbd>⌥ Alt</kbd></li>\n<li><kbd>⇪ CapsLock</kbd></li>\n<li><kbd>← Arrow left</kbd></li>\n<li><kbd>↑ Arrow up</kbd></li>\n<li><kbd>→ Arrow right</kbd></li>\n<li><kbd>↓ Arrow down</kbd></li>\n<li><kbd>⏎ Enter</kbd></li>\n<li><kbd>⌫ Backspace</kbd></li>\n<li><kbd>␣ Space</kbd></li>\n<li><kbd>⇥ Tab</kbd></li>\n<li><kbd>⌘ Command</kbd></li>\n<li><kbd>🖱 Mouse</kbd></li>\n</ul>\n<p>Commonly used sentences:</p>\n<ul>\n<li>Move with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or the <kbd>🕹 left stick</kbd>.</li>\n<li>Move the camera with <kbd>🖱 Mouse</kbd> or the <kbd>🕹 right stick</kbd>.</li>\n<li>Jump with <kbd>␣ Space</kbd> or <kbd>XBox Ⓐ</kbd>.</li>\n<li>Shoot with <kbd>Left Mouse</kbd> or <kbd>XBox Ⓑ</kbd>.</li>\n<li>Aim with <kbd>Right Mouse</kbd> or <kbd>XBox RT</kbd>.</li>\n<li>Cycle weapons with <kbd>⇥ Tab</kbd> or <kbd>Xbox Ⓧ</kbd>.</li>\n</ul>\n<details>\n<summary>source</summary>\n<pre><code class=\"language-md\">- Move with &#x3C;kbd>W&#x3C;/kbd>&#x3C;kbd>A&#x3C;/kbd>&#x3C;kbd>S&#x3C;/kbd>&#x3C;kbd>D&#x3C;/kbd> or the &#x3C;kbd>🕹 left stick&#x3C;/kbd>.\n- Move the camera with &#x3C;kbd>🖱 Mouse&#x3C;/kbd> or the &#x3C;kbd>🕹 right stick&#x3C;/kbd>.\n- Jump with &#x3C;kbd>␣ Space&#x3C;/kbd> or &#x3C;kbd>XBox Ⓐ&#x3C;/kbd>.\n- Shoot with &#x3C;kbd>Left Mouse&#x3C;/kbd> or &#x3C;kbd>XBox Ⓑ&#x3C;/kbd>.\n- Aim with &#x3C;kbd>Right Mouse&#x3C;/kbd> or &#x3C;kbd>XBox RT&#x3C;/kbd>.\n- Cycle weapons with &#x3C;kbd>⇥ Tab&#x3C;/kbd> or &#x3C;kbd>Xbox Ⓧ&#x3C;/kbd>.\n</code></pre>\n</details>",
+  "debug": false,
+  "verbose": true,
+  "isGodot4": true,
+  "projectDir": ".",
+  "executable": "/home/xananax/gdquest-demos/template/bin/4.0-beta9/Godot_v4.0-beta9_linux.x86_64",
+  "templatesDir": "/home/xananax/gdquest-demos/template/bin/4.0-beta9/templates",
+  "godot_version": [
+    4
+  ],
+  "name": "Template",
+  "icon": "logo.svg",
+  "exports": [
+    {
+      "type": "web",
+      "index": 0,
+      "isGodot3": false,
+      "name": "Web",
+      "platform": "Web",
+      "runnable": true,
+      "custom_features": "",
+      "export_filter": "all_resources",
+      "include_filter": "",
+      "exclude_filter": "",
+      "export_path": "",
+      "encryption_include_filters": "",
+      "encryption_exclude_filters": "",
+      "encrypt_pck": false,
+      "encrypt_directory": false,
+      "script_export_mode": "1",
+      "script_encryption_key": "",
+      "options": {
+        "custom_template/debug": "",
+        "custom_template/release": "",
+        "variant/extensions_support": false,
+        "vram_texture_compression/for_desktop": true,
+        "vram_texture_compression/for_mobile": false,
+        "html/export_icon": true,
+        "html/custom_html_shell": "",
+        "html/head_include": "",
+        "html/canvas_resize_policy": "2",
+        "html/focus_canvas_on_start": true,
+        "html/experimental_virtual_keyboard": false,
+        "progressive_web_app/enabled": false,
+        "progressive_web_app/offline_page": "",
+        "progressive_web_app/display": "1",
+        "progressive_web_app/orientation": "0",
+        "progressive_web_app/icon_144x144": "",
+        "progressive_web_app/icon_180x180": "",
+        "progressive_web_app/icon_512x512": "",
+        "progressive_web_app/background_color": "Color(0, 0, 0, 1)"
+      }
+    }
+  ],
+  "skipHeadless": true,
+  "cacheDir": "/home/xananax/gdquest-demos/template/bin",
+  "exportsDir": "/home/xananax/gdquest-demos/template/exports",
+  "variant": "beta9"
+}

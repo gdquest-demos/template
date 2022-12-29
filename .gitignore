@@ -1,7 +1,0 @@
-# Working dirs
-bin/
-exports/
-.godot
-
-# config
-.env
