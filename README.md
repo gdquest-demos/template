@@ -1,8 +1,8 @@
 ---
 # If specified, a cover will be used as a background image in the generated HTML
-cover: ''
+cover: 'static/cover.webp'
 # If specified, a link will be added to the page, and the builds will be pushed to itch
-itch: https://gdquest-demos.itch.io/template
+itchio: https://gdquest-demos.itch.io/template
 # A list of youtube videos
 youtube: 
   - https://youtu.be/RuueUYnwtKo
