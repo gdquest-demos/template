@@ -6,7 +6,8 @@ itchio: https://gdquest-demos.itch.io/template
 # A list of youtube videos
 youtube: 
   - https://youtu.be/RuueUYnwtKo
-tags: example template 
+tags: example template
+description: A generic template to use as a basis for demos
 ---
 # An example Demo repo
 
