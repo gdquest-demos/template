@@ -6,6 +6,7 @@ itchio: https://gdquest-demos.itch.io/template
 # A list of youtube videos
 youtube: 
   - https://youtu.be/RuueUYnwtKo
+tags: example template 
 ---
 # An example Demo repo
 
@@ -47,6 +48,29 @@ Either:
   ```
 - Head to https://localhost:8000 
 
+## To push the build to gh-pages
+
+```bash
+#!/usr/bin/env bash
+
+export BUILD_DIR="exports/public"
+export RELEASE_BRANCH="gh-pages"
+
+# if first time: 
+# git checkout -b $RELEASE_BRANCH
+# otherwise:
+git fetch origin $RELEASE_BRANCH
+git add -f $BUILD_DIR
+tree=$(git write-tree --prefix=$BUILD_DIR)
+git reset -- $BUILD_DIR
+export identifier=$(git describe --dirty --always)
+# if first time:
+# git push -u origin $RELEASE_BRANCH
+export commit=$(git commit-tree -p refs/remotes/origin/$RELEASE_BRANCH -m "Deploy $identifier" $tree)
+git update-ref refs/heads/$RELEASE_BRANCH $commit
+git push origin refs/heads/$RELEASE_BRANCH
+git checkout main
+```
 
 ## Useful Symbols for documenting keys & buttons
 
