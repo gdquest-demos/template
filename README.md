@@ -16,6 +16,10 @@ This repo serves as an example of the requirements and standards necessary for c
 # Checklist:
 
 - [ ] There's a purposeful and specific icon for the demo
+- [ ] The Screen settings are:
+  - [ ] not full screen by default
+  - [ ] if there is a fullscreen shortcut/button, it's hidden for the `HTML5` feature
+  - [ ] Window `stretch/mode` is set to `canvas_items` and `stretch/aspect` to `keep` (or `keep-height` or `keep-width`) 
 - [ ] The `README.md` is well written:
   - [ ] Buttons are in `<kbd>` tags, like this: <kbd>Z</kbd>. For controllers, you can use [AlphaNumeric Enclosed UTF8 chars](https://www.compart.com/en/unicode/block/U+2460) (see below for a list of useful ones)
   - [ ] The frontmatter is well set (see this file)
@@ -58,16 +62,13 @@ Either:
 export BUILD_DIR="exports/public"
 export RELEASE_BRANCH="gh-pages"
 
-# if first time: 
-# git checkout -b $RELEASE_BRANCH
-# otherwise:
-git fetch origin $RELEASE_BRANCH
+git fetch origin $RELEASE_BRANCH || git checkout -b $RELEASE_BRANCH
 git add -f $BUILD_DIR
 tree=$(git write-tree --prefix=$BUILD_DIR)
 git reset -- $BUILD_DIR
 export identifier=$(git describe --dirty --always)
-# if first time:
-# git push -u origin $RELEASE_BRANCH
+
+git push -u origin $RELEASE_BRANCH
 export commit=$(git commit-tree -p refs/remotes/origin/$RELEASE_BRANCH -m "Deploy $identifier" $tree)
 git update-ref refs/heads/$RELEASE_BRANCH $commit
 git push origin refs/heads/$RELEASE_BRANCH
