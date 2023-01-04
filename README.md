@@ -20,6 +20,7 @@ This repo serves as an example of the requirements and standards necessary for c
   - [ ] Buttons are in `<kbd>` tags, like this: <kbd>Z</kbd>. For controllers, you can use [AlphaNumeric Enclosed UTF8 chars](https://www.compart.com/en/unicode/block/U+2460) (see below for a list of useful ones)
   - [ ] The frontmatter is well set (see this file)
   - [ ] All images used are stored in a directory called `static`
+- [ ] If you want to puch to itch, make sure the itch address is configured correctly, and that it exists, and that `ITCHIO_API_KEY` is passed either through environment variables or a `.env` file in the project's root.
 - [ ] The project has a well configured `export_presets.cfg` that you tested locally _or_ does not have an `export_presets.cfg` at all (it will be generated)
 - [ ] the project has a `LICENSE` file
 
