@@ -41,8 +41,7 @@ Either:
 - Run: 
   ```sh
   gwee build \
-    -b beta9 . \
-    -d \
+    -b beta17 . \
     -p x11,win,osx,web \
     && \
     notify-send "build finished" && \
@@ -53,6 +52,11 @@ Either:
       --directory exports/public
   ```
 - Head to https://localhost:8000 
+
+For a main repo build (e.g, gquest-demos.github.io), run:
+```sh
+gwee render . && npx local-web-server --https --directory public
+```
 
 ## To push the build to gh-pages
 
